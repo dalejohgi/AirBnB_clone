@@ -2,7 +2,6 @@
 """[summary]
 """
 
-
 import uuid
 from cmd import Cmd
 import datetime
