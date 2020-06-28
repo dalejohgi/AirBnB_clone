@@ -7,3 +7,6 @@ import uuid
 from cmd import Cmd
 from datetime import date
 
+class BaseModel():
+
+	de
