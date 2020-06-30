@@ -2,6 +2,12 @@
 import json
 import models
 from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 """[summary]"""
 
 class FileStorage:
@@ -12,7 +18,7 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        FileStorage.__objects[__class__.__name__ + "." + obj.id] =  obj #Maybe sea mejor hallar el nombre de la clase de una manera mas genérica
+        FileStorage.__objects[type(obj).__name__ + "." + obj.id] =  obj #Maybe sea mejor hallar el nombre de la clase de una manera mas genérica
 
     def save(self):
         # Tenemos __objets un dic de obj tipo key = BaseModel.id value = __str__ representation
@@ -26,10 +32,19 @@ class FileStorage:
         
     def reload(self):
         """[summary]"""
+        class_dict ={
+            "BaseModel" : BaseModel, 
+            "User" : User, 
+            "Place" : Place, 
+            "State" : State, 
+            "City" : City,
+            "Amenity" : Amenity, 
+            "Review" : Review
+            }
         try:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
                 obj_json = json.load(file)
             for key, value in obj_json.items():
-                FileStorage.__objects[key] = (__class__.__name__)(**value)
+                FileStorage.__objects[key] = class_dict[obj_json[key]["__class__"]](**value)
         except:
             pass
