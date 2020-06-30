@@ -15,7 +15,8 @@ class FileStorage:
         FileStorage.__objects["BaseModel." + obj.id] = obj
     
     def save(self):
-        with open(FileStorage.__file_path, "a", encoding="utf-8") as file:
+        dict = {}
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as file:
             json.dump(FileStorage.__objects, file)
     
     def reload(self):
@@ -24,4 +25,3 @@ class FileStorage:
                 FileStorage.__objects = json.load(file)
         except:
             pass
-
