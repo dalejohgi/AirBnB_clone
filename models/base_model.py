@@ -3,8 +3,9 @@
 """
 
 import uuid
-from cmd import Cmd
+import models
 import datetime
+import models
 
 
 class BaseModel():
@@ -29,6 +30,7 @@ class BaseModel():
 			self.id = str(uuid.uuid4())
 			self.created_at = datetime.datetime.today()
 			self.updated_at = datetime.datetime.today()
+			models.storage.new(self)
       
 	def __str__(self):
 		"""[summary]
@@ -38,6 +40,7 @@ class BaseModel():
 	def save(self):
 		"""[summary]
 		"""
+		models.storage.save()
 		self.updated_at = datetime.datetime.today()
 	
 	def to_dict(self):
