@@ -12,7 +12,7 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        FileStorage.__objects["BaseModel." + obj.id] =  obj #Maybe sea mejor hallar el nombre de la clase de una manera mas genérica
+        FileStorage.__objects[__class__.__name__ + "." + obj.id] =  obj #Maybe sea mejor hallar el nombre de la clase de una manera mas genérica
 
     def save(self):
         # Tenemos __objets un dic de obj tipo key = BaseModel.id value = __str__ representation
@@ -30,6 +30,6 @@ class FileStorage:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
                 obj_json = json.load(file)
             for key, value in obj_json.items():
-                FileStorage.__objects[key] = BaseModel(**value)
+                FileStorage.__objects[key] = (__class__.__name__)(**value)
         except:
             pass

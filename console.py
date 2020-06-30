@@ -10,7 +10,7 @@ import models
 class HBNBCommand(cmd.Cmd):
     """Console"""
     prompt = '(hbnb) '
-    classes = ['BaseModel']
+    classes = ['BaseModel', 'User'] 
 
     def emptyline(self):
         """Empty line"""
