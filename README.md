@@ -20,6 +20,20 @@ It is also supposed to carry out The **0x00. AirBnB clone - The console** at [Ho
 * Update attributes of an object
 * Destroy an object
 
+## Getting the program
+
+In order to download the program use the command:
+
+- HTTPS:
+```
+git clone https://github.com/dalejohgi/AirBnB_clone.git
+```
+
+- SSH:
+```
+git clone git@github.com:dalejohgi/AirBnB_clone.git
+```
+
 ------------
 
 ## Usage:
