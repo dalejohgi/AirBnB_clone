@@ -24,17 +24,6 @@ It is also supposed to carry out The **0x00. AirBnB clone - The console** at [Ho
 
 ## Usage:
 
-### Available classes
-The next available classes are necessary to use the basic commands:
-- `BaseModel`
-- `Amenity`
-- `City`
-- `Place`
-- `Review`
-- `State`
-- `User`
-</br>
-
 In order to initialize the `./console` type:
 ```
 $ ./console.py 
@@ -42,7 +31,7 @@ $ ./console.py
 ```
 
 ### help
-Used to get a help to understand how console works
+Used to get a help to understand how console works. **Use:** `help`
 ```bash
 (hbnb) help
 
@@ -52,6 +41,21 @@ EOF  all  classes  create  destroy  help  quit  show  update
 
 (hbnb)
 ```
+
+## quit, EOF
+Used to quit the console. **Use:** `quit` or `<ctrl + d>`
+```bash
+(hbnb) quit
+$
+```
+## classes
+Used to print the avilable classes. **Use:** `classes`
+```bash
+(hbnb) classes
+BaseModel / User / Place / State / City / Amenity / Review
+(hbnb)
+```
+
 
 ## create
 Used to generate new objects. It's necessary to use it with the previous available classes. Use: `create <className>`
@@ -63,7 +67,7 @@ Used to generate new objects. It's necessary to use it with the previous availab
 Note that in this process an `id` was created by default. It will be used later.
 
 ## show
-Used to print the string representation of an object. **Use:** `show <className id>`
+Used to print the string representation of an object. **Use:** `show <className> <id>`
 ```bash
 (hbnb) show BaseModel 3159a6f1-d301-4ebd-be91-5aa712c8a2ea
 [BaseModel] (3159a6f1-d301-4ebd-be91-5aa712c8a2ea) {'id': '3159a6f1-d301-4ebd-be91-5aa712c8a2ea', 'updated_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 792620), 'created_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 782799)}
@@ -85,7 +89,7 @@ Used to update objects. **Use:** `update <className> <id> <key> <value>`
 (hbnb) update BaseModel 3159a6f1-d301-4ebd-be91-5aa712c8a2ea name "Nicolas"
 (hbnb) 
 ```
-Note how the value string is specified if the key is expected to contain a string as value.
+Note how the value string is specified if the key is expected to contain a string value.
 
 ## Destroy
 Used to destroy an object. **Use:** `destroy <className> <id>`
