@@ -38,7 +38,7 @@ git clone git@github.com:dalejohgi/AirBnB_clone.git
 
 ## Usage:
 
-In order to initialize the `./console` type:
+To initialize the `./console` type:
 ```
 $ ./console.py 
 (hbnb) 
@@ -113,13 +113,7 @@ Used to destroy an object. **Use:** `destroy <className> <id>`
 ```
 
 
-
-
-
-
-	
-
-
+------------
 
 ## Requirements
 
