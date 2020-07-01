@@ -24,7 +24,8 @@ It is also supposed to carry out The **0x00. AirBnB clone - The console** at [Ho
 
 ## Usage:
 
-### Avalaible classes:
+### Available classes
+The next available classes are necessary to use the basic commands:
 - `BaseModel`
 - `Amenity`
 - `City`
@@ -54,6 +55,34 @@ EOF  all  classes  create  destroy  help  quit  show  update
 
 ## create
 Used to generate new objects. It's necessary to use it with the available classes:
+```bash
+(hbnb) create BaseModel
+3159a6f1-d301-4ebd-be91-5aa712c8a2ea
+(hbnb) 
+```
+Note that in this process an `id` was created by default. It will be used later.
+
+## show
+Used to print the string representation of an object
+```bash
+(hbnb) show BaseModel 3159a6f1-d301-4ebd-be91-5aa712c8a2ea
+BaseModel] (3159a6f1-d301-4ebd-be91-5aa712c8a2ea) {'id': '3159a6f1-d301-4ebd-be91-5aa712c8a2ea', 'updated_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 792620), 'created_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 782799)}
+( hbnb) 
+```
+Note how `id` was used to get the strinf the specified object
+
+## all
+Prints all the string representation of all instances. It may be used with the name of the name of the class, ex: `all BaseModel` and just by typing the name of the command, ex: `all`
+```bash
+(hbnb) all BaseModel
+["[BaseModel] (b0da7367-5440-4a2e-af47-51970d1b2c4e) {'id': 'b0da7367-5440-4a2e-af47-51970d1b2c4e', 'updated_at': datetime.datetime(2020, 6, 30, 22, 43, 34, 252295), 'created_at': datetime.datetime(2020, 6, 30, 22, 43, 34, 251154)}", "[Place] (b523e341-cce4-4782-a0da-6ad44e47f502) {'id': 'b523e341-cce4-4782-a0da-6ad44e47f502', 'created_at': datetime.datetime(2020, 6, 30, 20, 15, 59, 323067), 'number_rooms': 15, 'updated_at': datetime.datetime(2020, 6, 30, 20, 15, 59, 325976)}", "[BaseModel] (3159a6f1-d301-4ebd-be91-5aa712c8a2ea) {'id': '3159a6f1-d301-4ebd-be91-5aa712c8a2ea', 'updated_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 792620), 'created_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 782799)}"]
+(hbnb) 
+
+```
+
+## 
+
+
 
 
 
