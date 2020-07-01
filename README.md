@@ -10,7 +10,7 @@
 ## Description
 
 This repository contains the files and directories to simulate a simple **AirBnB Console**. It simulates a Command Interpreter to create, update and remove data.
-It is aldo supposed to carry out The **0x00. AirBnB clone - The console** at [Holberton School.](https://www.holbertonschool.com "Holberton School.")
+It is also supposed to carry out The **0x00. AirBnB clone - The console** at [Holberton School.](https://www.holbertonschool.com "Holberton School.")
 
 ## What could we do with this console?
 
@@ -19,6 +19,47 @@ It is aldo supposed to carry out The **0x00. AirBnB clone - The console** at [Ho
 * Do operations on objects (count, compute stats, etc…)
 * Update attributes of an object
 * Destroy an object
+
+------------
+
+## Usage:
+
+### Avalaible classes:
+- `BaseModel`
+- `Amenity`
+- `City`
+- `Place`
+- `Review`
+- `State`
+- `User`
+</br>
+
+In order to initialize the `./console` type:
+```
+$ ./console.py 
+(hbnb) 
+```
+
+### help
+Used to get a help to understand how console works
+```bash
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  classes  create  destroy  help  quit  show  update
+
+(hbnb)
+```
+
+## create
+Used to generate new objects. It's necessary to use it with the available classes:
+
+
+
+	
+
+
 
 ## Requirements
 
@@ -52,5 +93,10 @@ The first line of all your files should be exactly `#!/usr/bin/python3`
 - All your classes should have a documentation (`python3 -c 'print(__import__("my_module").MyClass.__doc__)'`)
 - All your functions (inside and outside a class) should have a documentation (`python3 -c 'print(__import__("my_module").my_function.__doc__)`' and `python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'`)
 - We strongly encourage you to work together on test cases, so that you don’t miss any edge case
+
+## Authors:
+
+- *David Hincapié* - [@dalejohgi](https://github.com/dalejohgi)
+- *Nicolás Zárate*  - [@Nicolanz](https://github.com/Nicolanz)
 
 
