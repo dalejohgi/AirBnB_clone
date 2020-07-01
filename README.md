@@ -10,7 +10,7 @@
 ## Description
 
 This repository contains the files and directories to simulate a simple **AirBnB Console**. It simulates a Command Interpreter to create, update and remove data.
-It is also supposed to carry out The **0x00. AirBnB clone - The console** at [Holberton School.](https://www.holbertonschool.com "Holberton School.")
+It is also supposed to carry out The **0x00. AirBnB clone - The console** project at [Holberton School.](https://www.holbertonschool.com "Holberton School.")
 
 ## What could we do with this console?
 
@@ -72,7 +72,7 @@ BaseModel / User / Place / State / City / Amenity / Review
 
 
 ## create
-Used to generate new objects. It's necessary to use it with the previous available classes. Use: `create <className>`
+Used to generate new objects. It's necessary to use it with the previous available classes. **Use:** `create <className>`
 ```bash
 (hbnb) create BaseModel
 3159a6f1-d301-4ebd-be91-5aa712c8a2ea
@@ -89,7 +89,7 @@ Used to print the string representation of an object. **Use:** `show <className>
 ```
 
 ## all
-Prints all the string representation of all instances. **Use:** `all BaseModel` or `all`
+Prints the string representation of all instances. **Use:** `all <className>` or `all`
 ```bash
 (hbnb) all BaseModel
 ["[BaseModel] (b0da7367-5440-4a2e-af47-51970d1b2c4e) {'id': 'b0da7367-5440-4a2e-af47-51970d1b2c4e', 'updated_at': datetime.datetime(2020, 6, 30, 22, 43, 34, 252295), 'created_at': datetime.datetime(2020, 6, 30, 22, 43, 34, 251154)}", "[Place] (b523e341-cce4-4782-a0da-6ad44e47f502) {'id': 'b523e341-cce4-4782-a0da-6ad44e47f502', 'created_at': datetime.datetime(2020, 6, 30, 20, 15, 59, 323067), 'number_rooms': 15, 'updated_at': datetime.datetime(2020, 6, 30, 20, 15, 59, 325976)}", "[BaseModel] (3159a6f1-d301-4ebd-be91-5aa712c8a2ea) {'id': '3159a6f1-d301-4ebd-be91-5aa712c8a2ea', 'updated_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 792620), 'created_at': datetime.datetime(2020, 7, 1, 16, 39, 10, 782799)}"]
@@ -105,7 +105,7 @@ Used to update objects. **Use:** `update <className> <id> <key> <value>`
 ```
 Note how the value string is specified if the key is expected to contain a string value.
 
-## Destroy
+## destroy
 Used to destroy an object. **Use:** `destroy <className> <id>`
 ```bash
 (hbnb) destroy BaseModel 3159a6f1-d301-4ebd-be91-5aa712c8a2ea
