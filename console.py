@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""[summary]"""
+"""[Console Module]"""
 
 
 import cmd
@@ -14,28 +14,31 @@ import models
 
 
 class HBNBCommand(cmd.Cmd):
-    """Console"""
+    """Console of AirBnB for Holberton School"""
     prompt = '(hbnb) '
-    class_dict ={
-            "BaseModel" : BaseModel, 
-            "User" : User, 
-            "Place" : Place, 
-            "State" : State, 
-            "City" : City,
-            "Amenity" : Amenity, 
-            "Review" : Review
-            } 
+    class_dict = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "Place": Place,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Review": Review
+            }
 
     def emptyline(self):
-        """Empty line"""
+        """Do nothing when an empty line is input"""
         pass
 
     def do_classes(self, arg):
-        """BaseModel -- User"""
-        print("BaseModel -- User")
+        """Prints the available classes"""
+        print("BaseModel / User / Place / State / City / Amenity / Review")
 
     def do_create(self, class_name):
-        """Creates a new instance of an existing Class -- Type classes to see available classes\n"""
+        """
+        Creates a new instance of an existing Class
+        Type classes to see available classes\n
+        """
         if class_name == "":
             print("** class name missing **")
 
@@ -47,13 +50,18 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        """ Prints the string representation of an instance based on the class name and id -- Type classes to see available classes"""
+        """
+        Prints the string representation of an instance.
+
+        Usage: show <class name> <id>
+        """
+
         if arg == "":
             print("** class name missing **")
 
         elif (arg.split())[0] not in self.class_dict:
             print("** class doesn't exist **")
-        
+
         elif len(arg.split()) == 1:
             print("** instance id missing **")
 
@@ -64,15 +72,20 @@ class HBNBCommand(cmd.Cmd):
                 print(obj_dict[key_str])
             except:
                 print("** no instance found **")
-    
+
     def do_destroy(self, arg):
-        """Deletes an instance based on the class name and id -- Type classes to see available classes"""
+        """
+        Deletes an instance based on the class name and id
+
+        Type classes to see available classes
+        """
+
         if arg == "":
             print("** class name missing **")
 
         elif (arg.split())[0] not in self.class_dict:
             print("** class doesn't exist **")
-        
+
         elif len(arg.split()) == 1:
             print("** instance id missing **")
 
@@ -86,33 +99,42 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, arg):
-        """Prints all string representation of all instances based or not on the class name. -- Type classes to see available classes"""
-        if len(arg.split()) == 0  or (arg.split())[0] in self.class_dict:
+        """
+        Prints all string representation of all instances.
+
+        Usage: all
+        """
+
+        if len(arg.split()) == 0 or (arg.split())[0] in self.class_dict:
             obj_dict = models.storage.all()
             list_str = []
             for key, value in obj_dict.items():
                 list_str.append(str(value))
-            print (list_str)
+            print(list_str)
         else:
             print("** class doesn't exist **")
 
     def do_update(self, arg):
-        """Updates an instance based on the class name and id by adding or updating attribute
-        Usage: update <class name> <id> <attribute name> "<attribute value>" """
-        
+        """
+        Updates an instance based on the class name and id
+        by adding or updating attribute
+
+        Usage: update <class name> <id> <attribute name> "<attribute value>"
+        """
+
         arg_list = arg.split()
         if arg == "":
             print("** class name missing **")
 
         elif (arg_list[0] not in self.class_dict):
             print("** class doesn't exist **")
-        
+
         elif len(arg_list) == 1:
             print("** instance id missing **")
-        
+
         elif len(arg_list) == 2:
             print("** attribute name missing **")
-        
+
         elif len(arg_list) == 3:
             print("** value missing **")
         else:
@@ -143,12 +165,12 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, *args):
         """Quit command to exit the program\n"""
         exit()
-    
+
     def do_EOF(self, *args):
-        """Quit command to exit the program\n"""
+        """Exit the program\n"""
         print()
         exit()
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-		
