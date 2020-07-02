@@ -5,14 +5,14 @@
 import unittest
 from models.base_model import BaseModel
 import models
-#import pep8
+import pep8
 import datetime
 
 
 class TestHbRequirements(unittest.TestCase):
     """Tests for Holberton Requirements"""
 
-    def tet_style(self):
+    def test_style(self):
         """Test for PEP-8 style."""
         style = pep8.StyleGuide(quiet=True)
         result = style.check_files(['models/base_model.py'])
