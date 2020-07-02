@@ -2,6 +2,7 @@
 """[File Storage Tests Module]"""
 
 import unittest
+import pep8
 import os
 import json
 import models
@@ -12,7 +13,7 @@ from models.engine.file_storage import FileStorage
 class TestHbRequirements(unittest.TestCase):
     """Tests for Holberton Requirements"""
 
-    def tst_style(self):
+    def test_style(self):
         """Test for PEP-8 style."""
         style = pep8.StyleGuide(quiet=True)
         result = style.check_files(['models/engine/file_storage.py'])
