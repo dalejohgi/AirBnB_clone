@@ -25,6 +25,7 @@ class HBNBCommand(cmd.Cmd):
             "Amenity": Amenity,
             "Review": Review
             }
+    obj_dict = models.storage.all()
 
     def emptyline(self):
         """Do nothing when an empty line is input"""
@@ -171,10 +172,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict.values():
                 if type(i) == BaseModel:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == BaseModel:
+                    count += 1
+            print(count)
 
     def do_User(self, arg):
         """User method
@@ -185,10 +191,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict.values():
                 if type(i) == User:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == User:
+                    count += 1
+            print(count)
 
     def do_Place(self, arg):
         """Place method
@@ -199,10 +210,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict.values():
                 if type(i) == Place:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == Place:
+                    count += 1
+            print(count)
 
     def do_State(self, arg):
         """State method
@@ -213,10 +229,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict_.values():
                 if type(i) == State:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == State:
+                    count += 1
+            print(count)
 
     def do_City(self, arg):
         """City method
@@ -227,10 +248,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict.values():
                 if type(i) == City:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == City:
+                    count += 1
+            print(count)
 
     def do_Amenity(self, arg):
         """Amenity method
@@ -241,10 +267,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict.values():
                 if type(i) == Amenity:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == Amenity:
+                    count += 1
+            print(count)
 
     def do_Review(self, arg):
         """Review method
@@ -255,10 +286,15 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            my_dict = models.storage.all()
-            for i in my_dict.values():
+            for i in self.obj_dict.values():
                 if type(i) == Review:
                     print(i)
+        elif arg.split()[0] == ".count()":
+            count = 0
+            for i in self.obj_dict.values():
+                if type(i) == Review:
+                    count += 1
+            print(count)
 
     def do_quit(self, *args):
         """Quit command to exit the program\n"""
