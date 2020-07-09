@@ -162,6 +162,104 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def do_BaseModel(self, arg):
+        """BaseModel method
+
+        Args:
+            arg ([type]): [class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == BaseModel:
+                    print(i)
+
+    def do_User(self, arg):
+        """User method
+
+        Args:
+            arg ([type]): [class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == User:
+                    print(i)
+
+    def do_Place(self, arg):
+        """Place method
+
+        Args:
+            arg ([type]): [Class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == Place:
+                    print(i)
+
+    def do_State(self, arg):
+        """State method
+
+        Args:
+            arg ([type]): [class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == State:
+                    print(i)
+
+    def do_City(self, arg):
+        """City method
+
+        Args:
+            arg ([type]): [class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == City:
+                    print(i)
+
+    def do_Amenity(self, arg):
+        """Amenity method
+
+        Args:
+            arg ([type]): [class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == Amenity:
+                    print(i)
+
+    def do_Review(self, arg):
+        """Review method
+
+        Args:
+            arg ([type]): [class of the object]
+        """
+        if len(arg.split()) > 1:
+            pass
+        elif arg.split()[0] == ".all()":
+            my_dict = models.storage.all()
+            for i in my_dict.values():
+                if type(i) == Review:
+                    print(i)
+
     def do_quit(self, *args):
         """Quit command to exit the program\n"""
         exit()
