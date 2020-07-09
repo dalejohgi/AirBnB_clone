@@ -188,6 +188,14 @@ class HBNBCommand(cmd.Cmd):
                 print(self.obj_dict[string])
             except:
                 print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "BaseModel." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
+            except:
+                print("** no instance found **")
 
     def do_User(self, arg):
         """User method
@@ -212,6 +220,14 @@ class HBNBCommand(cmd.Cmd):
             string = "User." + id
             try:
                 print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "User." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
             except:
                 print("** no instance found **")
 
@@ -240,6 +256,14 @@ class HBNBCommand(cmd.Cmd):
                 print(self.obj_dict[string])
             except:
                 print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "Place." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
+            except:
+                print("** no instance found **")
 
     def do_State(self, arg):
         """State method
@@ -264,6 +288,14 @@ class HBNBCommand(cmd.Cmd):
             string = "State." + id
             try:
                 print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "State." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
             except:
                 print("** no instance found **")
 
@@ -292,6 +324,14 @@ class HBNBCommand(cmd.Cmd):
                 print(self.obj_dict[string])
             except:
                 print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "City." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
+            except:
+                print("** no instance found **")
 
     def do_Amenity(self, arg):
         """Amenity method
@@ -318,6 +358,14 @@ class HBNBCommand(cmd.Cmd):
                 print(self.obj_dict[string])
             except:
                 print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "Amenity." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
+            except:
+                print("** no instance found **")
 
     def do_Review(self, arg):
         """Review method
@@ -342,6 +390,14 @@ class HBNBCommand(cmd.Cmd):
             string = "Review." + id
             try:
                 print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
+        elif arg.split()[0][:8] == ".destroy":
+            id = arg.split()[0].replace('"', "")[9:-1]
+            string = "Review." + id
+            try:
+                del self.obj_dict[string]
+                models.storage.save()
             except:
                 print("** no instance found **")
 
