@@ -229,7 +229,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg.split()) > 1:
             pass
         elif arg.split()[0] == ".all()":
-            for i in self.obj_dict_.values():
+            for i in self.obj_dict.values():
                 if type(i) == State:
                     print(i)
         elif arg.split()[0] == ".count()":
