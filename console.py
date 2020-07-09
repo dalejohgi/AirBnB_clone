@@ -181,6 +181,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == BaseModel:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "BaseModel." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_User(self, arg):
         """User method
@@ -200,6 +207,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == User:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "User." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_Place(self, arg):
         """Place method
@@ -219,6 +233,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == Place:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "Place." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_State(self, arg):
         """State method
@@ -238,6 +259,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == State:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "State." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_City(self, arg):
         """City method
@@ -257,6 +285,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == City:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "City." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_Amenity(self, arg):
         """Amenity method
@@ -276,6 +311,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == Amenity:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "Amenity." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_Review(self, arg):
         """Review method
@@ -295,6 +337,13 @@ class HBNBCommand(cmd.Cmd):
                 if type(i) == Review:
                     count += 1
             print(count)
+        elif arg.split()[0][:5] == ".show":
+            id = arg.split()[0].replace('"', "")[6:-1]
+            string = "Review." + id
+            try:
+                print(self.obj_dict[string])
+            except:
+                print("** no instance found **")
 
     def do_quit(self, *args):
         """Quit command to exit the program\n"""
