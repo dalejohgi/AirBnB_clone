@@ -170,7 +170,7 @@ class HBNBCommand(cmd.Cmd):
             arg ([type]): [class of the object]
         """
         if len(arg.split()) > 1:
-            if arg[:7] == ".update":
+            if arg[:7] == ".update" and arg.split()[1][0] != "{":
                 values = arg.split()
                 id = arg.split()[0].replace('"', "")[8:-1]
                 string = "BaseModel." + id
@@ -179,6 +179,19 @@ class HBNBCommand(cmd.Cmd):
                 if string in self.obj_dict:
                     setattr(self.obj_dict[string], attr_name, attr_value)
                     self.obj_dict[string].save()
+                else:
+                    print("** no instance found **")
+            else:
+                id = arg.split()[0].replace('"', "")[8:-1]
+                string = "BaseModel." + id
+                my_str = ""
+                for i in range(1, len(arg.split())):
+                    my_str += arg.split()[i]
+                new_dict = eval(my_str.replace(")", ""))
+                if string in self.obj_dict:
+                    for key, value in new_dict.items():
+                        setattr(self.obj_dict[string], key, value)
+                        self.obj_dict[string].save()
                 else:
                     print("** no instance found **")
         elif arg.split()[0] == ".all()":
@@ -272,7 +285,7 @@ class HBNBCommand(cmd.Cmd):
             arg ([type]): [Class of the object]
         """
         if len(arg.split()) > 1:
-            if arg[:7] == ".update":
+            if arg[:7] == ".update" and arg.split()[1][0] != "{":
                 values = arg.split()
                 id = arg.split()[0].replace('"', "")[8:-1]
                 string = "Place." + id
@@ -281,6 +294,19 @@ class HBNBCommand(cmd.Cmd):
                 if string in self.obj_dict:
                     setattr(self.obj_dict[string], attr_name, attr_value)
                     self.obj_dict[string].save()
+                else:
+                    print("** no instance found **")
+            else:
+                id = arg.split()[0].replace('"', "")[8:-1]
+                string = "Place." + id
+                my_str = ""
+                for i in range(1, len(arg.split())):
+                    my_str += arg.split()[i]
+                new_dict = eval(my_str.replace(")", ""))
+                if string in self.obj_dict:
+                    for key, value in new_dict.items():
+                        setattr(self.obj_dict[string], key, value)
+                        self.obj_dict[string].save()
                 else:
                     print("** no instance found **")
         elif arg.split()[0] == ".all()":
@@ -316,7 +342,7 @@ class HBNBCommand(cmd.Cmd):
             arg ([type]): [class of the object]
         """
         if len(arg.split()) > 1:
-            if arg[:7] == ".update":
+            if arg[:7] == ".update" and arg.split()[1][0] != "{":
                 values = arg.split()
                 id = arg.split()[0].replace('"', "")[8:-1]
                 string = "State." + id
@@ -325,6 +351,19 @@ class HBNBCommand(cmd.Cmd):
                 if string in self.obj_dict:
                     setattr(self.obj_dict[string], attr_name, attr_value)
                     self.obj_dict[string].save()
+                else:
+                    print("** no instance found **")
+            else:
+                id = arg.split()[0].replace('"', "")[8:-1]
+                string = "State." + id
+                my_str = ""
+                for i in range(1, len(arg.split())):
+                    my_str += arg.split()[i]
+                new_dict = eval(my_str.replace(")", ""))
+                if string in self.obj_dict:
+                    for key, value in new_dict.items():
+                        setattr(self.obj_dict[string], key, value)
+                        self.obj_dict[string].save()
                 else:
                     print("** no instance found **")
         elif arg.split()[0] == ".all()":
@@ -360,7 +399,7 @@ class HBNBCommand(cmd.Cmd):
             arg ([type]): [class of the object]
         """
         if len(arg.split()) > 1:
-            if arg[:7] == ".update":
+            if arg[:7] == ".update" and arg.split()[1][0] != "{":
                 values = arg.split()
                 id = arg.split()[0].replace('"', "")[8:-1]
                 string = "City." + id
@@ -369,6 +408,19 @@ class HBNBCommand(cmd.Cmd):
                 if string in self.obj_dict:
                     setattr(self.obj_dict[string], attr_name, attr_value)
                     self.obj_dict[string].save()
+                else:
+                    print("** no instance found **")
+            else:
+                id = arg.split()[0].replace('"', "")[8:-1]
+                string = "City." + id
+                my_str = ""
+                for i in range(1, len(arg.split())):
+                    my_str += arg.split()[i]
+                new_dict = eval(my_str.replace(")", ""))
+                if string in self.obj_dict:
+                    for key, value in new_dict.items():
+                        setattr(self.obj_dict[string], key, value)
+                        self.obj_dict[string].save()
                 else:
                     print("** no instance found **")
         elif arg.split()[0] == ".all()":
@@ -404,7 +456,7 @@ class HBNBCommand(cmd.Cmd):
             arg ([type]): [class of the object]
         """
         if len(arg.split()) > 1:
-            if arg[:7] == ".update":
+            if arg[:7] == ".update" and arg.split()[1][0] != "{":
                 values = arg.split()
                 id = arg.split()[0].replace('"', "")[8:-1]
                 string = "Amenity." + id
@@ -413,6 +465,19 @@ class HBNBCommand(cmd.Cmd):
                 if string in self.obj_dict:
                     setattr(self.obj_dict[string], attr_name, attr_value)
                     self.obj_dict[string].save()
+                else:
+                    print("** no instance found **")
+            else:
+                id = arg.split()[0].replace('"', "")[8:-1]
+                string = "Amenity." + id
+                my_str = ""
+                for i in range(1, len(arg.split())):
+                    my_str += arg.split()[i]
+                new_dict = eval(my_str.replace(")", ""))
+                if string in self.obj_dict:
+                    for key, value in new_dict.items():
+                        setattr(self.obj_dict[string], key, value)
+                        self.obj_dict[string].save()
                 else:
                     print("** no instance found **")
         elif arg.split()[0] == ".all()":
@@ -448,7 +513,7 @@ class HBNBCommand(cmd.Cmd):
             arg ([type]): [class of the object]
         """
         if len(arg.split()) > 1:
-            if arg[:7] == ".update":
+            if arg[:7] == ".update" and arg.split()[1][0] != "{":
                 values = arg.split()
                 id = arg.split()[0].replace('"', "")[8:-1]
                 string = "Review." + id
@@ -457,6 +522,19 @@ class HBNBCommand(cmd.Cmd):
                 if string in self.obj_dict:
                     setattr(self.obj_dict[string], attr_name, attr_value)
                     self.obj_dict[string].save()
+                else:
+                    print("** no instance found **")
+            else:
+                id = arg.split()[0].replace('"', "")[8:-1]
+                string = "Review." + id
+                my_str = ""
+                for i in range(1, len(arg.split())):
+                    my_str += arg.split()[i]
+                new_dict = eval(my_str.replace(")", ""))
+                if string in self.obj_dict:
+                    for key, value in new_dict.items():
+                        setattr(self.obj_dict[string], key, value)
+                        self.obj_dict[string].save()
                 else:
                     print("** no instance found **")
         elif arg.split()[0] == ".all()":
